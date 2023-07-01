@@ -1,0 +1,69 @@
+package cz.map.model;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="route_color")
+public class RouteColor {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
+	
+	@Column(name="souradnice_n")
+	private double souradnice_n;
+	
+	@Column(name="souradnice_s")
+	private double souradnice_s;
+	
+	@Column(name="route_color")
+	private String routeColor;
+
+	public RouteColor() {
+		super();
+	}
+
+	public RouteColor(double souradnice_n, double souradnice_s, String routeColor) {
+		super();
+		this.souradnice_n = souradnice_n;
+		this.souradnice_s = souradnice_s;
+		this.routeColor = routeColor;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+
+	public double getSouradnice_n() {
+		return souradnice_n;
+	}
+
+	public void setSouradnice_n(double souradnice_n) {
+		this.souradnice_n = souradnice_n;
+	}
+
+	public double getSouradnice_s() {
+		return souradnice_s;
+	}
+
+	public void setSouradnice_s(double souradnice_s) {
+		this.souradnice_s = souradnice_s;
+	}
+
+	public String getRouteColor() {
+		return routeColor;
+	}
+
+	public void setRouteColor(String routeColor) {
+		this.routeColor = routeColor;
+	} 
+	
+	
+
+}

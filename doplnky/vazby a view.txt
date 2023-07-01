@@ -1,0 +1,22 @@
+
+ALTER TABLE route_data
+ADD CONSTRAINT fk_transmitter
+FOREIGN KEY (transmitter_id)
+REFERENCES map_transmitter(id_transmitter);
+
+
+CREATE VIEW route_color AS 
+SELECT route_data.id, route_data.souradnice_n,route_data.souradnice_s, map_transmitter.route_color
+FROM route_data
+LEFT JOIN map_transmitter
+ON route_data.transmitter_id = map_transmitter.id;
+
+CREATE VIEW circle_data AS
+SELECT route_data.id, route_data.souradnice_n,route_data.souradnice_s,maplog.rsrp
+FROM route_data
+LEFT JOIN maplog ON 
+DATE_TRUNC('minute', route_data.time) = DATE_TRUNC('minute', maplog.log_time);
+
+CREATE VIEW transmitter AS
+SELECT id,name_transmitter,souradnice_n,souradnice_s,image_path
+FROM map_transmitter;

@@ -1,0 +1,5 @@
+package cz.map.controller;
+
+public class TransmitterController {
+
+}

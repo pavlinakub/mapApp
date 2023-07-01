@@ -1,0 +1,6 @@
+CREATE TABLE map_transmitter(id SERIAL PRIMARY KEY,cid DECIMAL, name_transmitter VARCHAR(128),souradnice_n DECIMAL,souradnice_s DECIMAL);
+
+INSERT INTO map_TRANSMITTER( CID,name_transmitter,souradnice_N,souradnice_s)
+VALUES
+(72303.13,'Petřvald, U Tesly 1825, komín v areálu fy Ankra',49.825683333333,18.365266666667),
+(74551.21,'Ostrava - Bartovice, Šenovská 463/393, betonový stožár u I/11',49.781658333333,18.34365);

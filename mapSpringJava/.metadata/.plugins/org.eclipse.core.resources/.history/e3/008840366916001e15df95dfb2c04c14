@@ -1,0 +1,5 @@
+package cz.map.repository;
+
+public interface TransmitterRepository {
+
+}
